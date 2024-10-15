@@ -152,7 +152,9 @@ export const getUserDetails = catchAsyncError(async (req, res) => {
 export const logoutAdmin = catchAsyncError(async (req, res) => {
   res
     .status(200)
-    .cookie("adminToken", "", { expires: new Date(Date.now()), httpOnly: true })
+    .cookie("adminToken", "", { expires: new Date(Date.now()),  httpOnly: true,
+      secure:true,
+      sameSite:"None" })
     .json({
       success: true,
       message: "Admin logged out successfully",
@@ -166,6 +168,8 @@ export const logoutUser = catchAsyncError(async (req, res) => {
     .cookie("patientToken", "", {
       expires: new Date(Date.now()),
       httpOnly: true,
+      secure:true,
+      sameSite:"None"
     })
     .json({
       success: true,
