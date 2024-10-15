@@ -13,7 +13,7 @@ import userRouter from "./router/userRouter.js";
 const app = express();
 
 // Load environment variables
-config({ path: "./config/config.env" });
+config({ path: ".config.env" });
 
 // Middleware setup
 app.use(cors({
