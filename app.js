@@ -20,7 +20,7 @@ app.use(cors({
   origin: 'https://lucent-tiramisu-52d94b.netlify.app',
   credentials: true, // This is important if you are sending cookies or authentication headers
 }));
-);
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
