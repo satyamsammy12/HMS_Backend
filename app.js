@@ -17,7 +17,7 @@ config({ path: ".config.env" });
 
 // Middleware setup
 app.use(cors({
-  origin: 'https://lucent-tiramisu-52d94b.netlify.app',
+  origin: 'https://singular-sawine-0143a2.netlify.app',
   credentials: true, // This is important if you are sending cookies or authentication headers
 }));
 
