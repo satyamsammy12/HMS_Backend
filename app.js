@@ -16,11 +16,10 @@ const app = express();
 config({ path: "./config/config.env" });
 
 // Middleware setup
-app.use(
-  cors({
-    origin: [process.env.FRONTEND_URI],
-    credentials: true,
-  })
+app.use(cors({
+  origin: 'https://lucent-tiramisu-52d94b.netlify.app',
+  credentials: true, // This is important if you are sending cookies or authentication headers
+}));
 );
 app.use(express.json());
 app.use(cookieParser());
