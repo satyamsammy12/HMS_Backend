@@ -13,13 +13,16 @@ import userRouter from "./router/userRouter.js";
 const app = express();
 
 // Load environment variables
-config({ path: ".config.env" });
+config({ path: "./config.env" });
 
 // Middleware setup
-app.use(cors({
-  origin: 'https://singular-sawine-0143a2.netlify.app',
-  credentials: true, // This is important if you are sending cookies or authentication headers
-}));
+app.use(
+  cors({
+    origin: [process.env.FRONTEND_URL_ONE, process.env.FRONTEND_URL_TWO],
+    method: ["GET", "POST", "DELETE", "PUT"],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(cookieParser());
